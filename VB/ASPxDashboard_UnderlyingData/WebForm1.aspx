@@ -24,6 +24,6 @@
         </dx:ASPxDashboard>
     </div>
     </form>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/UnderlyingData.js")%>"></script>
 </body>
 </html>
-<script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/UnderlyingData.js")%>"></script>
