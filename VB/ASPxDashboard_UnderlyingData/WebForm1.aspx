@@ -1,7 +1,7 @@
-﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="WebForm1.aspx.vb" 
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" 
     Inherits="ASPxDashboard_UnderlyingData.WebForm1" %>
 
-<%@ Register Assembly="DevExpress.Dashboard.v16.2.Web, Version=16.2.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" 
+<%@ Register Assembly="DevExpress.Dashboard.v21.1.Web.WebForms, Version=21.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" 
     Namespace="DevExpress.DashboardWeb" TagPrefix="dx" %>
 
 <!DOCTYPE html>
@@ -24,6 +24,6 @@
         </dx:ASPxDashboard>
     </div>
     </form>
-    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/UnderlyingData.js")%>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/UnderlyingData.js") %>"></script>
 </body>
 </html>

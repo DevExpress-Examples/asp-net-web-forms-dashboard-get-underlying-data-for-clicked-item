@@ -1,12 +1,20 @@
-function getUnderlyingData(args) {
+function onBeforeRender(sender) {
+    var dashboardControl = sender.GetDashboardControl();
+
+    var viewerApiExtension = dashboardControl.findExtension('viewer-api');
+    if (viewerApiExtension)
+        viewerApiExtension.on('itemClick', onItemClick);
+}
+
+function onItemClick(args) {
     var underlyingData = [];
 
-    args.RequestUnderlyingData(function (data) {
-        dataMembers = data.GetDataMembers();
-        for (var i = 0; i < data.GetRowCount() ; i++) {
+    args.requestUnderlyingData(function (data) {
+        dataMembers = data.getDataMembers();
+        for (var i = 0; i < data.getRowCount() ; i++) {
             var dataTableRow = {};
             $.each(dataMembers, function (_, dataMember) {
-                dataTableRow[dataMember] = data.GetRowValue(i, dataMember);
+                dataTableRow[dataMember] = data.getRowValue(i, dataMember);
             });
             underlyingData.push(dataTableRow);
         }
@@ -28,7 +36,7 @@ function getUnderlyingData(args) {
     });
 }
 
-function initPopup() {
+function initPopup(sender) {
     $("#myPopup").dxPopup({
         width: 800, height: 600,
         title: "Underlying data",
