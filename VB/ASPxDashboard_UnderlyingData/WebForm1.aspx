@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="ASPxDashboard_UnderlyingData.WebForm1" %>
+﻿<%@ Page Language="VB" AutoEventWireup="true" CodeBehind="WebForm1.aspx.vb" Inherits="ASPxDashboard_UnderlyingData.WebForm1" %>
 
 <!DOCTYPE html>
 
