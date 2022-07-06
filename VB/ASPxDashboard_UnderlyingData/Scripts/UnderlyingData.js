@@ -4,6 +4,12 @@ function onBeforeRender(sender) {
     var viewerApiExtension = dashboardControl.findExtension('viewerApi');
     if (viewerApiExtension)
         viewerApiExtension.on('itemClick', onItemClick);
+
+    $("#myPopup").dxPopup({
+        width: 800, height: 600,
+        title: "Underlying data",
+        showCloseButton: true
+    });
 }
 
 function onItemClick(args) {
@@ -11,7 +17,7 @@ function onItemClick(args) {
 
     args.requestUnderlyingData(function (data) {
         dataMembers = data.getDataMembers();
-        for (var i = 0; i < data.getRowCount() ; i++) {
+        for (var i = 0; i < data.getRowCount(); i++) {
             var dataTableRow = {};
             $.each(dataMembers, function (_, dataMember) {
                 dataTableRow[dataMember] = data.getRowValue(i, dataMember);
@@ -33,13 +39,5 @@ function onItemClick(args) {
         $popupContent.empty();
         $popupContent.append($grid);
         popup.show();
-    });
-}
-
-function initPopup(sender) {
-    $("#myPopup").dxPopup({
-        width: 800, height: 600,
-        title: "Underlying data",
-        showCloseButton: true
     });
 }
